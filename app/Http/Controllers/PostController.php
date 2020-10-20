@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -12,6 +13,10 @@ class PostController extends Controller
 
     public function  store(Request $request) {
         $msg = $request->message;
-        return view('post.msg', ['msg' => $msg]);
+        DB::table('msg_save_only')->insert([
+            'message' => $msg
+        ]);
+        $msgs = DB::table('msg_save_only')->get();
+        return view('post.msg', ['msgs' => $msgs]);
     }
 }

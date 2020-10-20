@@ -1,3 +1,3 @@
-@if ($msg)
-<h1>{{ $msg }}</h1>
-@endif
+@foreach ($msgs as $value)
+    <p>{{$value->message}}</p>
+@endforeach
