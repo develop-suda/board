@@ -19,4 +19,14 @@ class PostController extends Controller
         $msgs = DB::table('msg_save_only')->get();
         return view('post.msg', ['msgs' => $msgs]);
     }
+
+    public function board() {
+        $msgs = DB::table('msg_save_only')->get();
+        return view('post.msg', ['msgs' => $msgs]);
+    }
+
+    public function  delete(Request $request) {
+        DB::table('msg_save_only')->where('id', $request->id)->delete();
+        return redirect('/post');
+    }
 }

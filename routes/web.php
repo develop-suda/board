@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('post', 'App\Http\Controllers\PostController@index');
 Route::post('post', 'App\Http\Controllers\PostController@store');
+Route::post('post/delete', 'App\Http\Controllers\PostController@delete');
+Route::get('board', 'App\Http\Controllers\PostController@board');

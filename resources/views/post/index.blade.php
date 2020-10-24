@@ -7,3 +7,6 @@
           value="send"></td></tr>
     </table>
 </form>
+<form action="board" method="get">
+   <input type="submit" value= "掲示板を見る" >
+</form>
