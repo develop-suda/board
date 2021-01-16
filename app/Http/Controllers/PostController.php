@@ -29,4 +29,5 @@ class PostController extends Controller
         DB::table('msg_save_only')->where('id', $request->id)->delete();
         return redirect('/post');
     }
+    
 }
